@@ -12,7 +12,7 @@ public class DelitoMenor extends Delito{
     public DelitoMenor() {
     }
 
-    public DelitoMenor(String nombrePolicia, int idPolicia, int numeroCelda, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public DelitoMenor(String nombrePolicia, int idPolicia, int numeroCelda, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.nombrePolicia = nombrePolicia;
         this.idPolicia = idPolicia;

@@ -3,34 +3,35 @@ Clase Hija Hija Asesinato
  */
 package lab4_rafaelflores;
 
-import java.util.Date;
 
-public class Asesinato extends DelitoMayor{
-    private String nombreArma, nombreCuerpo;
 
-    public Asesinato() {
+public class numeroCuerpo extends DelitoMayor{
+    private String nombreArma;
+    private int numeroCuerpo;
+
+    public numeroCuerpo() {
     }
 
-    public Asesinato(String nombreArma, String nombreCuerpo, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public numeroCuerpo(String nombreArma, int numeroCuerpo, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(gravedad, descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.nombreArma = nombreArma;
-        this.nombreCuerpo = nombreCuerpo;
+        this.numeroCuerpo = numeroCuerpo;
     }
 
     public void setNombreArma(String nombreArma) {
         this.nombreArma = nombreArma;
     }
 
-    public void setNombreCuerpo(String nombreCuerpo) {
-        this.nombreCuerpo = nombreCuerpo;
+    public void setNombreCuerpo(int nombreCuerpo) {
+        this.numeroCuerpo = nombreCuerpo;
     }
 
     public String getNombreArma() {
         return nombreArma;
     }
 
-    public String getNombreCuerpo() {
-        return nombreCuerpo;
+    public int getNombreCuerpo() {
+        return numeroCuerpo;
     }
 
     @Override

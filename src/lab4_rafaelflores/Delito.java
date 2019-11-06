@@ -3,7 +3,11 @@
  */
 package lab4_rafaelflores;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 public class Delito {
     private String descripcion, nombreVictima, pais, sentencia;
@@ -14,7 +18,7 @@ public class Delito {
     public Delito() {
     }
 
-    public Delito(String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public Delito(String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         this.descripcion = descripcion;
         this.nombreVictima = nombreVictima;
         this.pais = pais;
@@ -23,7 +27,11 @@ public class Delito {
         this.numeroDelito = numeroDelito;
         
         this.isCulpable = isCulpable;
-        this.fecha = fecha;
+        try {
+            this.setFecha(fecha);
+        } catch (ParseException ex) {
+            System.out.println("Debe ingresar la fecha en formato correcto DD-MM-YYYY");
+        }
     }
 
     public void setDescripcion(String descripcion) {
@@ -54,8 +62,9 @@ public class Delito {
         this.isCulpable = isCulpable;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setFecha(String fecha) throws ParseException {
+        DateFormat form = new SimpleDateFormat("DD-MM-YYYY");
+        this.fecha = form.parse(fecha);
     }
 
     public String getDescripcion() {

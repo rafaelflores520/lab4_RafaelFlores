@@ -12,7 +12,7 @@ public class Terrorismo extends DelitoMayor{
     public Terrorismo() {
     }
 
-    public Terrorismo(String nombreArtefacto, int numeroVictimas, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public Terrorismo(String nombreArtefacto, int numeroVictimas, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(gravedad, descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.nombreArtefacto = nombreArtefacto;
         this.numeroVictimas = numeroVictimas;

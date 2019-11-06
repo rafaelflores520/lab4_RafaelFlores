@@ -11,7 +11,7 @@ public class DelitoMayor extends Delito{
     public DelitoMayor() {
     }
 
-    public DelitoMayor(int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public DelitoMayor(int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.gravedad = gravedad;
     }

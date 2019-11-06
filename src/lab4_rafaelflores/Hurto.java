@@ -12,7 +12,7 @@ public class Hurto extends DelitoMenor{
     public Hurto() {
     }
 
-    public Hurto(String objeto, int valor, String nombrePolicia, int idPolicia, int numeroCelda, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public Hurto(String objeto, int valor, String nombrePolicia, int idPolicia, int numeroCelda, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(nombrePolicia, idPolicia, numeroCelda, descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.objeto = objeto;
         this.valor = valor;

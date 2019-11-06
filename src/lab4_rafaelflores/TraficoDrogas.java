@@ -12,7 +12,7 @@ public class TraficoDrogas extends DelitoMayor{
     public TraficoDrogas() {
     }
 
-    public TraficoDrogas(String nombreDroga, int cantidad, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public TraficoDrogas(String nombreDroga, int cantidad, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(gravedad, descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.nombreDroga = nombreDroga;
         this.cantidad = cantidad;

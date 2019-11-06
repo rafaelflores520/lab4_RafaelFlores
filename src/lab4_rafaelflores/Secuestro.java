@@ -12,7 +12,7 @@ public class Secuestro extends DelitoMayor{
     public Secuestro() {
     }
 
-    public Secuestro(String diasRetenido, boolean muerto, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, Date fecha) {
+    public Secuestro(String diasRetenido, boolean muerto, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(gravedad, descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.diasRetenido = diasRetenido;
         this.muerto = muerto;
