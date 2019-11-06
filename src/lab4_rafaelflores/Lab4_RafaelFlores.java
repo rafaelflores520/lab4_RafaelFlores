@@ -468,6 +468,25 @@ public class Lab4_RafaelFlores {
                     }
                 }
                 break;
+            
+                case 3:
+                for (int i = 0; i < listaCri.size(); i++) {
+                    switch (listaCri.get(i).getClass().getSimpleName()) {
+                        case "Criminal":
+                            if (i == 0) {
+                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
+                                System.out.println("|No.  |Nombre              |Genero              |Pais Residencia     |Descripcion         |Edad                |Esta Encarcelado    |");
+                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
+                                System.out.println("|  "+i+"  |"+listaCri.get(i).toString());
+                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
+                            }else{
+                                System.out.println("|  "+i+"  |"+listaCri.get(i).toString());
+                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
+                            }
+                            break;
+                    }
+                }
+                break;
         }
     }
     
