@@ -95,8 +95,8 @@ public class Delito {
         return isCulpable;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public String getFecha() {
+        return fecha.toLocaleString();
     }
 
     @Override

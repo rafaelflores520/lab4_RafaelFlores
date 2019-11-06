@@ -5,14 +5,14 @@ package lab4_rafaelflores;
 
 
 
-public class numeroCuerpo extends DelitoMayor{
+public class Asesinato extends DelitoMayor{
     private String nombreArma;
     private int numeroCuerpo;
 
-    public numeroCuerpo() {
+    public Asesinato() {
     }
 
-    public numeroCuerpo(String nombreArma, int numeroCuerpo, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
+    public Asesinato(String nombreArma, int numeroCuerpo, int gravedad, String descripcion, String nombreVictima, String pais, String sentencia, int numeroDelito, boolean isCulpable, String fecha) {
         super(gravedad, descripcion, nombreVictima, pais, sentencia, numeroDelito, isCulpable, fecha);
         this.nombreArma = nombreArma;
         this.numeroCuerpo = numeroCuerpo;

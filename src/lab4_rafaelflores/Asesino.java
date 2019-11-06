@@ -33,8 +33,7 @@ public class Asesino extends Criminal implements Agente{
 
     @Override
     public String toString() {
-        String patron = super.toString()+"%20s|%20s|";
-        return String.format(patron, this.getNombreVictima(), this.getArma());
+        return super.toString();
     }
     
     @Override

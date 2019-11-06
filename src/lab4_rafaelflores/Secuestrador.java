@@ -34,8 +34,7 @@ public class Secuestrador extends Criminal implements Agente{
 
     @Override
     public String toString() {
-        String patron = super.toString()+"%20s|%20.2f|";
-        return String.format(patron, this.getNombreVictima(), this.getCantidadRescate());
+        return super.toString();
     }
     
     @Override

@@ -42,8 +42,7 @@ public class Terrorista extends Criminal implements Agente{
 
     @Override
     public String toString() {
-        String patron = super.toString()+"|%20s|%20s|%20s|";
-        return String.format(patron, this.getPaisAtaque(), this.getCiudad(), this.getMetodo());
+        return super.toString();
     }
     
     @Override
