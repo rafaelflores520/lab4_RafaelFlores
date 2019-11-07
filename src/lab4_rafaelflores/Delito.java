@@ -7,6 +7,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Delito {
@@ -27,11 +29,7 @@ public class Delito {
         this.numeroDelito = numeroDelito;
         
         this.isCulpable = isCulpable;
-        try {
-            this.setFecha(fecha);
-        } catch (ParseException ex) {
-            System.out.println("Debe ingresar la fecha en formato correcto DD-MM-YYYY");
-        }
+        this.setFecha(fecha);
     }
 
     public void setDescripcion(String descripcion) {
@@ -62,9 +60,13 @@ public class Delito {
         this.isCulpable = isCulpable;
     }
 
-    public void setFecha(String fecha) throws ParseException {
+    public void setFecha(String fecha) {
         DateFormat form = new SimpleDateFormat("DD-MM-YYYY");
-        this.fecha = form.parse(fecha);
+        try {
+            this.fecha = form.parse(fecha);
+        } catch (ParseException ex) {
+            Logger.getLogger(Delito.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public String getDescripcion() {

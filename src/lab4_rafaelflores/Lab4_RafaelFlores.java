@@ -2,9 +2,13 @@
 Laboratorio 4 - Rafael Flores
  */
 package lab4_rafaelflores;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Lab4_RafaelFlores {
     public static Scanner read = new Scanner(System.in);
     public static ArrayList<Delito> listaDel = new ArrayList();
@@ -51,6 +55,27 @@ public class Lab4_RafaelFlores {
             } while (true);
             switch (op) {
                 case 1:
+                    int opAgr = MenuAgregar();
+                    switch (opAgr) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        case 7:
+                            break;
+                        case 8:
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 2:
                     break;
@@ -468,26 +493,234 @@ public class Lab4_RafaelFlores {
                     }
                 }
                 break;
-            
-                case 3:
-                for (int i = 0; i < listaCri.size(); i++) {
-                    switch (listaCri.get(i).getClass().getSimpleName()) {
-                        case "Criminal":
-                            if (i == 0) {
-                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                                System.out.println("|No.  |Nombre              |Genero              |Pais Residencia     |Descripcion         |Edad                |Esta Encarcelado    |");
-                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                                System.out.println("|  "+i+"  |"+listaCri.get(i).toString());
-                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                            }else{
-                                System.out.println("|  "+i+"  |"+listaCri.get(i).toString());
-                                System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                            }
-                            break;
-                    }
-                }
-                break;
         }
     }
+    
+    public static int MenuAgregar(){
+        int op;
+        do {
+            try {
+                System.out.println("Que Delitos desea Agregar"
+                    + "\n\t1. Vandalismo"
+                    + "\n\t2. Hurto"
+                    + "\n\t3. Prostitucion"
+                    + "\n\t4. Terrorismo"
+                    + "\n\t5. Asesinato"
+                    + "\n\t6. Violacion"
+                    + "\n\t7. Secuestro"
+                    + "\n\t8. Trafico de Drogas"
+                    + "\n\t0. Salir");
+                op = read.nextInt();
+                if (op <= 8 && op >= 0) {
+                    break;
+                } else {
+                    System.out.println("Debe seleccionar una opcion valida");
+                }
+            } catch (InputMismatchException ExVariable) {
+                System.out.println("Solo puede meter numeros!");
+                read.next();
+            }
+        } while (true);
+        return op;
+    }
+    
+    public static void AgrVandalismo(){
+        Delito d = new Vandalismo();
+        System.out.println("Ingrese la descripcion del Delito: ");
+        d.setDescripcion(read.nextLine());
+        System.out.println("Ingrese el nombre de la Victima: ");
+        d.setNombreVictima(read.nextLine());
+        System.out.println("Ingrese el Pais de la Victima: ");
+        d.setPais(read.nextLine());
+        do {
+            try {
+                int num = read.nextInt();
+                if (num > 1000) {
+                    d.setNumeroDelito(num);
+                    break;
+                } else {
+                    System.out.println("El numero de delito debe ser mayo que 1000");
+                }
+            } catch (InputMismatchException ExVariable) {
+                System.out.println("Debe ingresar un valor numerico");
+                read.next();
+            }
+        } while (true);
+        do {
+            try {
+                System.out.println("En este Delito se dicto culpabilidad?"
+                        + "\n\t1. Si"
+                        + "\n\t2. No");
+                int op = read.nextInt();
+                if (op > 0 && op < 3) {
+                    read.nextLine();
+                    if (op == 1) {
+                        d.setIsCulpable(true);
+                        System.out.println("Cual fue la sentencia? (# Anios)");
+                        d.setSentencia(read.nextLine());
+                    } else {
+                        d.setIsCulpable(false);
+                        d.setSentencia("Inocente");
+                    }
+                    break;
+                } else {
+                    System.out.println("Dene selecionar una opcion valida");
+                }
+            } catch (InputMismatchException ExVariable) {
+                System.out.println("Solo puede ingresar valore numericos");
+                read.next();
+            }
+        } while (true);
+        System.out.println("Ingrese la fecha del delito: dd-mm-yyyy");
+        d.setFecha(read.next());
+        System.out.println("Ingrese le nombre del Policia");
+        ((DelitoMenor) d).setNombrePolicia(read.nextLine());
+        System.out.println("Ingrese el Id del Policia");
+        ((DelitoMenor) d).setIdPolicia(read.nextInt());
+        read.nextLine();
+        if (d.isIsCulpable()) {
+            ((DelitoMenor) d).setNumeroCelda(read.nextInt());
+            read.nextLine();
+        }else{
+            ((DelitoMenor) d).setNumeroCelda(0);
+        }
+        System.out.println("Ingrese el nombre del Edificio");
+        ((Vandalismo) d).setEdificacion(read.nextLine());
+        System.out.println("Ingrese el numero de pisos");
+        ((Vandalismo) d).setPisos(read.nextInt()); read.nextLine();
+        System.out.println("Ingrese el nombre del duenio");
+        ((Vandalismo) d).setNombreDuenio(read.nextLine());
+    }
+    
+    public static void AgrHurto(){
+        Delito d = new Hurto();
+        System.out.println("Ingrese la descripcion del Delito: ");
+        d.setDescripcion(read.nextLine());
+        System.out.println("Ingrese el nombre de la Victima: ");
+        d.setNombreVictima(read.nextLine());
+        System.out.println("Ingrese el Pais de la Victima: ");
+        d.setPais(read.nextLine());
+        do {
+            try {
+                int num = read.nextInt();
+                if (num > 1000) {
+                    d.setNumeroDelito(num);
+                    break;
+                } else {
+                    System.out.println("El numero de delito debe ser mayo que 1000");
+                }
+            } catch (InputMismatchException ExVariable) {
+                System.out.println("Debe ingresar un valor numerico");
+                read.next();
+            }
+        } while (true);
+        do {
+            try {
+                System.out.println("En este Delito se dicto culpabilidad?"
+                        + "\n\t1. Si"
+                        + "\n\t2. No");
+                int op = read.nextInt();
+                if (op > 0 && op < 3) {
+                    read.nextLine();
+                    if (op == 1) {
+                        d.setIsCulpable(true);
+                        System.out.println("Cual fue la sentencia? (# Anios)");
+                        d.setSentencia(read.nextLine());
+                    } else {
+                        d.setIsCulpable(false);
+                        d.setSentencia("Inocente");
+                    }
+                    break;
+                } else {
+                    System.out.println("Dene selecionar una opcion valida");
+                }
+            } catch (InputMismatchException ExVariable) {
+                System.out.println("Solo puede ingresar valore numericos");
+                read.next();
+            }
+        } while (true);
+        System.out.println("Ingrese la fecha del delito: dd-mm-yyyy");
+        d.setFecha(read.next());
+        System.out.println("Ingrese le nombre del Policia");
+        ((DelitoMenor) d).setNombrePolicia(read.nextLine());
+        System.out.println("Ingrese el Id del Policia");
+        ((DelitoMenor) d).setIdPolicia(read.nextInt());
+        read.nextLine();
+        if (d.isIsCulpable()) {
+            ((DelitoMenor) d).setNumeroCelda(read.nextInt());
+            read.nextLine();
+        }else{
+            ((DelitoMenor) d).setNumeroCelda(0);
+        }
+        System.out.println("Ingrese el Onjeto Hurtado");
+        ((Hurto)d).setObjeto(read.nextLine());
+        System.out.println("Ingrese el valor del Objeto");
+        ((Hurto)d).setValor(read.nextInt());
+    }
+    
+    public static void AgrProstitucion(){
+        Delito d = new Prostitucion();
+        System.out.println("Ingrese la descripcion del Delito: ");
+        d.setDescripcion(read.nextLine());
+        System.out.println("Ingrese el nombre de la Victima: ");
+        d.setNombreVictima(read.nextLine());
+        System.out.println("Ingrese el Pais de la Victima: ");
+        d.setPais(read.nextLine());
+        do {
+            try {
+                int num = read.nextInt();
+                if (num > 1000) {
+                    d.setNumeroDelito(num);
+                    break;
+                } else {
+                    System.out.println("El numero de delito debe ser mayo que 1000");
+                }
+            } catch (InputMismatchException ExVariable) {
+                System.out.println("Debe ingresar un valor numerico");
+                read.next();
+            }
+        } while (true);
+        do {
+            try {
+                System.out.println("En este Delito se dicto culpabilidad?"
+                        + "\n\t1. Si"
+                        + "\n\t2. No");
+                int op = read.nextInt();
+                if (op > 0 && op < 3) {
+                    read.nextLine();
+                    if (op == 1) {
+                        d.setIsCulpable(true);
+                        System.out.println("Cual fue la sentencia? (# Anios)");
+                        d.setSentencia(read.nextLine());
+                    } else {
+                        d.setIsCulpable(false);
+                        d.setSentencia("Inocente");
+                    }
+                    break;
+                } else {
+                    System.out.println("Dene selecionar una opcion valida");
+                }
+            } catch (InputMismatchException ExVariable) {
+                System.out.println("Solo puede ingresar valore numericos");
+                read.next();
+            }
+        } while (true);
+        System.out.println("Ingrese la fecha del delito: dd-mm-yyyy");
+        d.setFecha(read.next());
+        System.out.println("Ingrese le nombre del Policia");
+        ((DelitoMenor) d).setNombrePolicia(read.nextLine());
+        System.out.println("Ingrese el Id del Policia");
+        ((DelitoMenor) d).setIdPolicia(read.nextInt());
+        read.nextLine();
+        if (d.isIsCulpable()) {
+            ((DelitoMenor) d).setNumeroCelda(read.nextInt());
+            read.nextLine();
+        }else{
+            ((DelitoMenor) d).setNumeroCelda(0);
+        }
+        ((Prostitucion) d).setNombreSolicitante(read.nextLine());
+    }
+    
+    
     
 }
