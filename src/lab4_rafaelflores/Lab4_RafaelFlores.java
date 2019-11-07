@@ -58,30 +58,44 @@ public class Lab4_RafaelFlores {
                     int opAgr = MenuAgregar();
                     switch (opAgr) {
                         case 1:
+                            read.nextLine();
+                            AgrVandalismo();
                             break;
                         case 2:
+                            read.nextLine();
+                            AgrHurto();
                             break;
                         case 3:
+                            read.nextLine();
+                            AgrProstitucion();
                             break;
                         case 4:
+                            System.out.println("Proxima Revision");
                             break;
                         case 5:
+                            System.out.println("Proxima Revision");
                             break;
                         case 6:
+                            System.out.println("Proxima Revision");
                             break;
                         case 7:
+                            System.out.println("Proxima Revision");
                             break;
                         case 8:
+                            System.out.println("Proxima Revision");
                             break;
                         default:
                             break;
                     }
                     break;
                 case 2:
+                    System.out.println("Proxima Revision");
                     break;
                 case 3:
+                    System.out.println("Proxima Revision");
                     break;
                 case 4:
+                    System.out.println("Proxima Revision");
                     break;
                 case 5:
                     ListarDelitos();
@@ -90,8 +104,10 @@ public class Lab4_RafaelFlores {
                     ListarCriminales(0,0);
                     break;
                 case 7:
+                    System.out.println("Proxima Revision");
                     break;
                 case 8:
+                    System.out.println("Proxima Revision");
                     break;
                 case 9:
                     Criminal agente;
@@ -434,10 +450,10 @@ public class Lab4_RafaelFlores {
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                     System.out.println("|No.  |Nombre              |Genero              |Pais Residencia     |Descripcion         |Edad                |Esta Encarcelado    |");
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                                    System.out.println("|  " + i + "  |" + listaCri.get(i).toString());
+                                    System.out.println("|  " + i + "  " + listaCri.get(i).toString());
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                 } else {
-                                    System.out.println("|  " + i + "  |" + listaCri.get(i).toString());
+                                    System.out.println("|  " + i + "  " + listaCri.get(i).toString());
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                 }
                             }
@@ -448,10 +464,10 @@ public class Lab4_RafaelFlores {
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                     System.out.println("|No.  |Nombre              |Genero              |Pais Residencia     |Descripcion         |Edad                |Esta Encarcelado    |");
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                                    System.out.println("|  " + i + "  |" + listaCri.get(i).toString());
+                                    System.out.println("|  " + i + "  " + listaCri.get(i).toString());
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                 } else {
-                                    System.out.println("|  " + i + "  |" + listaCri.get(i).toString());
+                                    System.out.println("|  " + i + "  " + listaCri.get(i).toString());
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                 }
                             }
@@ -462,10 +478,10 @@ public class Lab4_RafaelFlores {
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                     System.out.println("|No.  |Nombre              |Genero              |Pais Residencia     |Descripcion         |Edad                |Esta Encarcelado    |");
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                                    System.out.println("|  " + i + "  |" + listaCri.get(i).toString());
+                                    System.out.println("|  " + i + "  " + listaCri.get(i).toString());
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                 } else {
-                                    System.out.println("|  " + i + "  |" + listaCri.get(i).toString());
+                                    System.out.println("|  " + i + "  " + listaCri.get(i).toString());
                                     System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                 }
                             }
@@ -483,10 +499,10 @@ public class Lab4_RafaelFlores {
                                 System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                                 System.out.println("|No.  |Nombre              |Genero              |Pais Residencia     |Descripcion         |Edad                |Esta Encarcelado    |");
                                 System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
-                                System.out.println("|  "+i+"  |"+listaCri.get(i).toString());
+                                System.out.println("|  "+i+"  "+listaCri.get(i).toString());
                                 System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                             }else{
-                                System.out.println("|  "+i+"  |"+listaCri.get(i).toString());
+                                System.out.println("|  "+i+"  "+listaCri.get(i).toString());
                                 System.out.println("+-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+");
                             }
                             break;
@@ -534,6 +550,7 @@ public class Lab4_RafaelFlores {
         d.setPais(read.nextLine());
         do {
             try {
+                System.out.println("Ingrese el Numero del Delito");
                 int num = read.nextInt();
                 if (num > 1000) {
                     d.setNumeroDelito(num);
@@ -572,13 +589,14 @@ public class Lab4_RafaelFlores {
             }
         } while (true);
         System.out.println("Ingrese la fecha del delito: dd-mm-yyyy");
-        d.setFecha(read.next());
+        d.setFecha(read.nextLine());
         System.out.println("Ingrese le nombre del Policia");
         ((DelitoMenor) d).setNombrePolicia(read.nextLine());
         System.out.println("Ingrese el Id del Policia");
         ((DelitoMenor) d).setIdPolicia(read.nextInt());
         read.nextLine();
         if (d.isIsCulpable()) {
+            System.out.println("Ingrese el numero de la celda");
             ((DelitoMenor) d).setNumeroCelda(read.nextInt());
             read.nextLine();
         }else{
@@ -590,6 +608,7 @@ public class Lab4_RafaelFlores {
         ((Vandalismo) d).setPisos(read.nextInt()); read.nextLine();
         System.out.println("Ingrese el nombre del duenio");
         ((Vandalismo) d).setNombreDuenio(read.nextLine());
+        listaDel.add(d);
     }
     
     public static void AgrHurto(){
@@ -602,6 +621,7 @@ public class Lab4_RafaelFlores {
         d.setPais(read.nextLine());
         do {
             try {
+                System.out.println("Ingrese el numero de la celda");
                 int num = read.nextInt();
                 if (num > 1000) {
                     d.setNumeroDelito(num);
@@ -640,13 +660,14 @@ public class Lab4_RafaelFlores {
             }
         } while (true);
         System.out.println("Ingrese la fecha del delito: dd-mm-yyyy");
-        d.setFecha(read.next());
+        d.setFecha(read.nextLine());
         System.out.println("Ingrese le nombre del Policia");
         ((DelitoMenor) d).setNombrePolicia(read.nextLine());
         System.out.println("Ingrese el Id del Policia");
         ((DelitoMenor) d).setIdPolicia(read.nextInt());
         read.nextLine();
         if (d.isIsCulpable()) {
+            System.out.println("Ingrese el numero de la celda");
             ((DelitoMenor) d).setNumeroCelda(read.nextInt());
             read.nextLine();
         }else{
@@ -656,6 +677,7 @@ public class Lab4_RafaelFlores {
         ((Hurto)d).setObjeto(read.nextLine());
         System.out.println("Ingrese el valor del Objeto");
         ((Hurto)d).setValor(read.nextInt());
+        listaDel.add(d);
     }
     
     public static void AgrProstitucion(){
@@ -668,6 +690,7 @@ public class Lab4_RafaelFlores {
         d.setPais(read.nextLine());
         do {
             try {
+                System.out.println("Ingrese el numero de la celda");
                 int num = read.nextInt();
                 if (num > 1000) {
                     d.setNumeroDelito(num);
@@ -706,19 +729,21 @@ public class Lab4_RafaelFlores {
             }
         } while (true);
         System.out.println("Ingrese la fecha del delito: dd-mm-yyyy");
-        d.setFecha(read.next());
+        d.setFecha(read.nextLine());
         System.out.println("Ingrese le nombre del Policia");
         ((DelitoMenor) d).setNombrePolicia(read.nextLine());
         System.out.println("Ingrese el Id del Policia");
         ((DelitoMenor) d).setIdPolicia(read.nextInt());
         read.nextLine();
         if (d.isIsCulpable()) {
+            System.out.println("Ingrese el numero de la celda");
             ((DelitoMenor) d).setNumeroCelda(read.nextInt());
             read.nextLine();
         }else{
             ((DelitoMenor) d).setNumeroCelda(0);
         }
         ((Prostitucion) d).setNombreSolicitante(read.nextLine());
+        listaDel.add(d);
     }
     
     
